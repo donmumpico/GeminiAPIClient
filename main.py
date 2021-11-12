@@ -6,8 +6,8 @@ import hashlib
 import datetime, time
 import config
 
-gemini_api_key = config.gemini_api_key
-gemini_api_secret = config.gemini_api_secret
+gemini_api_key = str.encode(config.gemini_api_key)
+gemini_api_secret = str.encode(config.gemini_api_secret)
 base_url = "https://api.gemini.com"
 
 def Auth(payload):
@@ -57,5 +57,7 @@ print("ask price:   "+str(price))
 
 maker_price = round(price+(price/100*0.01), 2)
 print("maker price: "+str(maker_price))
+
+#getPaymentMethods()
 #placeOrder(coin_pair, "0.34", maker_price)
 
